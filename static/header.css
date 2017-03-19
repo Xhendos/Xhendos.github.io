@@ -1,0 +1,38 @@
+.head
+{
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.quote
+{
+  font-family: "Consolas", Monospaced;
+  font-size: 40px;
+  color: #61b22e;
+}
+
+.icon-cog
+{
+  color: white;
+}
+
+.fa:hover
+{
+
+  -webkit-transition: color 2s ease-out;
+  -moz-transition: color 2s ease-out;
+  -o-transition: color 2s ease-out;
+  -ms-transition: color 2s ease-out;
+  transition: color 2s ease-out;
+  color: #61B22E;
+}
+
+.paragraph-style
+{
+  background-color: #D3D3D3;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  padding 50px;
+  font-family: "Lucida Sans Typewriter", Monospaced;
+  font-size: 18px;
+}
