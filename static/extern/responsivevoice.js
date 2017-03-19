@@ -1,6 +1,8 @@
-*
+/*
  ResponsiveVoice JS v1.5.2
+
  (c) 2015-2017 LearnBrite
+
  License: http://responsivevoice.org/license
 */
 if("undefined"!=typeof responsiveVoice)console.log("ResponsiveVoice already loaded"),console.log(responsiveVoice);else var ResponsiveVoice=function(){var a=this;a.version="1.5.2";console.log("ResponsiveVoice r"+a.version);a.responsivevoices=[{name:"UK English Female",flag:"gb",gender:"f",voiceIDs:[3,5,1,6,7,171,278,201,257,258,8]},{name:"UK English Male",flag:"gb",gender:"m",voiceIDs:[0,4,2,75,277,202,256,159,6,7]},{name:"US English Female",flag:"us",gender:"f",voiceIDs:[39,40,41,42,43,173,205,204,
