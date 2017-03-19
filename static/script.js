@@ -1,4 +1,4 @@
 function sayText(text)
 {
-  responsiveVoice.speak(text, "Uk English Female");
+  responsiveVoice.speak("hello world", "UK English Male");
 }
