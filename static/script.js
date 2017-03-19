@@ -1,4 +1,8 @@
 function sayText(text)
 {
-  responsiveVoice.speak(text, "UK English Female");
+  if(!responsiveVoice.isPlaying())
+  {
+    responsiveVoice.speak(text, "UK English Female");    
+  }
+
 }
