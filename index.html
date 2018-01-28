@@ -12,7 +12,7 @@
 <link rel = "stylesheet" href = "css/styles/arduino-light.css">
 
 <script>hljs.initHighlightingOnLoad();</script>
-
+	
 	</head>
 
 	<body style = "background-color: #363636; color: white;">
@@ -304,10 +304,18 @@
 
 					<pre>
 						<code class = "C">
-	if(value=>5)	/* BAD. This looks familiar to the arrow operator */
-	if(value => 5)	/* The correct way to write a condition */
+	if(value>=5)	/* BAD. This looks familiar to the arrow operator */
+	if(value >= 5)	/* The correct way to write a condition */
 						</code>
 					</pre>
+
+					<pre>
+						<code class = "C">
+	if((var1 + var2)!= 3)	/* BAD. There should be a space ) and ! */
+	if((var1 - var2) <= 5)	/* Optimal readability for a conditional statement */
+						</code>
+					</pre>
+					
 				</div>							<!-- class col-6 -->
 
 				<div class = "col-6">	
@@ -329,6 +337,15 @@
 	human programmers. To comply with this, the space bar is important in 
 	conditional statements. <br />
 	A space should be added between a variable and an operator (and vice versa).
+	<br /> <br /> <br /> <br />
+
+	This all applies on more complex conditional statements aswell. Parentheses 
+	require a space followed by an operator. This is just the same as a variable name.
+	Keep in mind that parantheses followed by a variable name do <b>NOT</b> need a space.
+	
+
+
+
 					</p>
 				</div>							<!-- class col-6 -->
 			</div>								<!-- class row -->
@@ -373,7 +390,7 @@
 	<br /> <br />
 	
 	Do not forget alignment. After the #define keyword should be a tab, which uses only 1 space
-	since a tab is 4 spaces and #define is 7 characters. Next, write your constant or macro name
+	since a tab is 8 spaces and #define is 7 characters. Next, write your constant or macro name
 	followed by a tab or two so the definition is aligned with each other.  	
 
 
@@ -401,6 +418,52 @@
 						</code>
 					</pre>
 
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
+
+
+		<div class = "container">
+			<div class = "row">						
+				<div class = "col-2"> </div>				<!-- class col-2 -->
+
+				<div class = "col-9"> 
+					<h3 style = "color: #c4790f">
+						Pointer asterisk
+					</h3>							
+				</div>							<!-- class col-9 -->
+
+				<div class = "col-1"> </div>				<!-- class col-1 -->
+
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->	
+
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-6">
+					<pre>
+						<code class = "C">
+	int *i_ptr, *j_ptr, *k_ptr;	/* The only way to make multiple pointers on 1 line */
+	int* l_ptr;			/* BAD. The asterisk should be placed next to the var name */
+	int * m_ptr;			/* BAD. The asterisk should be placed next to the var name */
+	int *n_ptr;			/* A correct way to write down a pointer */
+						</code>
+					</pre>
+					
+				</div>							<!-- class col-6 -->
+
+				<div class = "col-6">	
+					<p style = 'font-family:"Antic Didone";
+						    font-size:17px;'>
+
+	There has a lot been discussed about the placement of the pointer asterisk.
+	My suggestion is that the asterisk should be placed next to the variabele.
+	The reason for this is that a pointer is a variable characteristic.
+	Also, declaring multiple pointer variables on 1 line can be done by placing
+	after every comma a new asterisk for the variable.
+
+					</p>
 				</div>							<!-- class col-6 -->
 			</div>								<!-- class row -->
 		</div>									<!-- class container -->
