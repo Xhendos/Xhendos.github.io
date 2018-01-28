@@ -9,7 +9,7 @@
 <link href='https://fonts.googleapis.com/css?family=Antic Didone' rel='stylesheet'>
 
 <script src = "js/highlight.pack.js"> </script>
-<link rel = "stylesheet" href = "css/styles/default.css">
+<link rel = "stylesheet" href = "css/styles/arduino-light.css">
 
 <script>hljs.initHighlightingOnLoad();</script>
 
@@ -45,6 +45,7 @@
 	how they write different statements. <br />
 	This styling guide is a reference for C programming in embedded systems,
 	but parts may be used in other languages or for other purposes. <br />						
+					
 					</p>						<!-- paragraph intro -->
 				</div>							<!-- class col-9 -->
 
@@ -55,6 +56,79 @@
 
 			</div>								<!-- class row -->
 		</div>									<!-- class container-->		
+
+
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-2"> </div>				<!-- class col-2 -->
+
+				<div class = "col-9">
+					<h3 style = "color: #c4790f">
+						Curly bracket 
+					</h3>
+				</div>
+
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
+
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-6">
+					<p style = 'font-family:"Antic Didone";
+						    font-size: 17px;'>	
+					
+	Curly brackets <i>{}</i> should be placed on a seperate line. 
+	This means that after <b>ANY</b> statement (if, for, while etc) a newline should
+	be added containing the curly bracket. <br />
+	The reason for doing is, is that missing curly brackets could be more easily detected,
+	because they <b>ALWAYS</b> got the same amount of tabs before the curly bracket.
+	A programmer should look vertical to see if an opening curly bracket meets a vertical
+	curly bracket and vice versa.
+	<br /> <br /> <br />
+
+	Let me explain the missing curly bracket by looking vertical in the code. <br />
+	If we look at the correct way of writing the curly bracket on the next line
+	(see the code on the right), we can see that both curly brackets contains 1 tab space	
+	before the actual curly bracket is written. They are in line with each other. <br />
+	If we would write a bigger statement and write the curly bracket on the same line, the curly bracket
+	may not be even onto the screen. This causes that the programmer need to scroll to look at the last
+	character of the statement and verify if this is a curly bracket or not. 
+	<br /> <br />
+
+	Writing the curly bracket on a new line in line with the other (the same amount of tabs) it is way easier
+	to find out if there is a mission curly bracket or not.
+
+					</p>
+				</div>							<!-- class col-6 -->
+
+
+				<div class = "col-6">	
+					<pre>
+						<code class = "C">
+	int mem_copied = 1;	/* variables always in snake_case */
+	if(mem_copied) {	/* BAD! The curly bracket should be on next line */
+		mem_copied = 0;	
+	}
+
+						</code>
+					</pre>
+
+
+					<pre>
+						<code class = "C">
+	int i;				
+	for(i = 0; i < otherval; i++)	/* Curly bracket on a seperate line */
+	{				/* A missing curly bracket is easier to detect */
+		i += 5;
+	}
+						</code>
+					</pre>
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
+
 
 	
 		<div class = "container">
@@ -73,6 +147,201 @@
 		</div>									<!-- class container -->	
 
 
+		<div class = "container">
+			<div class = "row">
+				
+
+
+				<div class = "col-6">
+					<pre>
+						<code class = "C">
+
+	typedef struct		/* Typedef not recommended, but allowed */ 
+	{
+		int an_int;	/* Struct members in snake_case */
+		char a_char;
+	} object_name_t;	/* Object name in snake_case */
+				/* Because typedef, add _t at the end */
+
+						</code>	
+					</pre>
+
+
+
+					<pre>
+						<code class = "C">
+	union union_t	/* Prefered method, no typedef */
+	{
+		int i;	/* Union member in snake_case */
+		char c;
+	}
+	
+
+						</code>
+					</pre>
+
+				</div>							<!-- class col-6 -->
+
+
+				<div class = "col-6"> 
+					<p style = 'font-family:"Antic Didone";
+						    font-size: 17px;'>	
+					
+	A struct and a union may be typedeffed, but this is not recommended.
+	If you typedef a struct or a union, you are actually hiding some important
+	information for other programmers. It is legal to use,
+	but do not typedef if you are wisely.<br />
+
+	Struct and union members should be written in snake_case, since they are not constants.
+	Writing them in another style, like CamelCase is strictly forbidden and is <b>not allowed</b>.
+	<br /> <br /> <br />					
+
+
+	As you can see in the code, the curly brackets are on new lines as discussed before.
+	Keep in mind that structs and unions should be declared as much as possible in an header
+	file (.h extension). More on this later. 
+					</p>
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
+
+
+
+		<div class = "container">
+			<div class = "row">						
+				<div class = "col-2"> </div>				<!-- class col-2 -->
+
+				<div class = "col-9"> 
+					<h3 style = "color: #c4790f">
+						Enums
+					</h3>							
+				</div>							<!-- class col-9 -->
+
+				<div class = "col-1"> </div>				<!-- class col-1 -->
+
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->	
+
+
+		<div class = "container">
+			<div class = "row">	
+				<div class = "col-6">
+					<p style = 'font-family:"Antic Didone";
+						    font-size:17px;'>
+
+	Enums are a slightly bit different than structs and unions.
+	Since enums are integers that start from 0, they can be seen
+	as constants. Constants in this sentence means that enum elements
+	should be all capitaliezd. <br />
+
+	After each enum element there should be a comma next to the last character
+	of the enum element. <b>NO</b> spaces are allowed.
+	<br /> <br />
+
+	If needed, you may change the default value of an element by using the 
+	assign operator followed by a space and the value. The rule is the same,
+	the comma is placed after the last number and no spaces are between
+	the comma and the last digit.
+					</p>		
+				</div>							<!-- class col-6 -->
+
+				<div class = "col-6">
+					<pre>
+						<code class = "C">
+	enum 
+	{
+		FALSE ,		/* BAD. No space between last character and comma */
+		TRUE
+	}
+
+	enum
+	{
+		SUCCESS,	/* Every element contains a comma after the last character */
+		ERROR,
+		WARNING,
+		EXIT		/* The last element does NOT contain a comma */
+	}
+						</code>
+					</pre>
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
+
+
+
+
+
+
+
+		<div class = "container">
+			<div class = "row">						
+				<div class = "col-2"> </div>				<!-- class col-2 -->
+
+				<div class = "col-9"> 
+					<h3 style = "color: #c4790f">
+						Preprocessor defines
+					</h3>							
+				</div>							<!-- class col-9 -->
+
+				<div class = "col-1"> </div>				<!-- class col-1 -->
+
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->	
+
+
+
+		<div class = "container">
+			<div class = "row">	
+				<div class = "col-6">
+					<p style = 'font-family:"Antic Didone";
+						    font-size:17px;'>
+
+	It's standard to define preprocessor constant with all capital letters.
+	To seperate 2 words from eachother, use an underscore _. <br />
+	Macro names should be all capitalized, since they are made with the #define
+	keyword of the preprocessor. <br />
+	I have been thinking if the definition of the macro arguments should be
+	capatilized aswell, but could not give a valid reason why it may not. 
+	<br /> <br />
+
+	since <a href = "https://gcc.gnu.org/onlinedocs/cpp/Macro-Arguments.html"> GNU </a>
+	uses capitalized letters for macro names it is the best to follow this.
+	I know that GNU does define its macro's with small letters, and I do not agree with them
+	on this point. Please use capitalized letters on #defines all the time.
+	<br /> <br />
+	
+	Do not forget alignment. After the #define keyword should be a tab, which uses only 1 space
+	since a tab is 4 spaces and #define is 7 characters. Next, write your constant or macro name
+	followed by a tab or two so the definition is aligned with each other.  	
+
+
+					</p>		
+				</div>							<!-- class col-6 -->
+
+				<div class = "col-6">
+					<pre>
+						<code class = "C">
+	#define	PI	3.14159265359
+	#define	MULT(X)	X*X
+						</code>
+					</pre>
+
+
+
+					<pre>
+						<code class = "C">
+	#define	PI	3.14159265359		/* BAD. PI should have another tab */
+	#define	EULER_CONST	2.71828	
+
+	#define	PI		3.14159265359	/* Definition of PI and EULER are aligned */
+	#define	EULER_CONST	2.71828		
+
+						</code>
+					</pre>
+
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
 
 	</body>
 </html>
