@@ -269,8 +269,70 @@
 
 
 
+		<div class = "container">
+			<div class = "row">						
+				<div class = "col-2"> </div>				<!-- class col-2 -->
+
+				<div class = "col-9"> 
+					<h3 style = "color: #c4790f">
+						Conditions
+					</h3>							
+				</div>							<!-- class col-9 -->
+
+				<div class = "col-1"> </div>				<!-- class col-1 -->
+
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->	
 
 
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-6">
+					<pre>
+						<code class = "C">
+	if(value != 0)	/* BAD. This result in longer lines and is redundant */
+	if(value)	/* Check if the value is not equal to 0 */				
+						</code>
+					</pre>
+
+					<pre>
+						<code class = "C">
+	if(value == 0)	/* BAD. We want our code to be as small as possible */
+	if(!value)	/* Check if the value is equal to 0 */
+						</code>
+					</pre>
+
+					<pre>
+						<code class = "C">
+	if(value=>5)	/* BAD. This looks familiar to the arrow operator */
+	if(value => 5)	/* The correct way to write a condition */
+						</code>
+					</pre>
+				</div>							<!-- class col-6 -->
+
+				<div class = "col-6">	
+					<p style = 'font-family:"Antic Didone";
+						    font-size:17px;'>
+	Conditions are used in an if-, while-, for-, and switch statement.
+	If a programmer want to compare a value that may not be equal to 0,
+	the programmer should not write != 0. Any statement is true if the value
+	is not equal to 0. The progammer should only write his value inside the statement.
+	<br /> <br /> <br /> <br />
+
+	If a programmer want to verify that a variable is equal to 0, he should not write
+	== 0. Instead we use the logic NOT operator. Statements are true if a variable is not
+	equal to zero. If we add the logic NOT operator (!) a statement would run true if
+	the value is equal to zero.
+	<br /> <br /> <br /> <br />
+
+	It is important to improve the readability of the source code for other
+	human programmers. To comply with this, the space bar is important in 
+	conditional statements. <br />
+	A space should be added between a variable and an operator (and vice versa).
+					</p>
+				</div>							<!-- class col-6 -->
+			</div>								<!-- class row -->
+		</div>									<!-- class container -->
 
 
 		<div class = "container">
