@@ -1,472 +1,84 @@
 <html>
 	<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-<link href='https://fonts.googleapis.com/css?family=Antic Didone' rel='stylesheet'>
-
-<script src = "js/highlight.pack.js"> </script>
-<link rel = "stylesheet" href = "css/styles/arduino-light.css">
-
-<script>hljs.initHighlightingOnLoad();</script>
-	
+		<link rel="stylesheet" type="text/css" href="app.css">
+		<link rel="stylesheet" type="text/css" href="bower_components\bootstrap\dist\css\bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="app.js"></script>
 	</head>
-
-	<body style = "background-color: #363636; color: white;">
-	
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-1">	</div>				<!-- class col-1 -->
-
-				<div class = "col-11">
-					<h1 style = 'font-family:"Courier New", Courier, monospace;
-						     color: #0c9e18;'> 
-						Succesful code start with the right style.
-					</h1>
-				</div>							<!-- class col-8 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-5">
-					<p style = 'font-family:"Antic Didone";
-						    font-size: 22px;'>
-
-	When people are working on a project, most of them just write code based on an 
-	idea that just comes to mind. <br />
-	They do not comment their written code, nor are they consistent on the style
-	how they write different statements. <br />
-	This styling guide is a reference for C programming in embedded systems,
-	but parts may be used in other languages or for other purposes. <br />						
-					
-					</p>						<!-- paragraph intro -->
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-7">			
-					<img src = "img/ExampleCode.png"
-					     hspace = 100 align = "middle" />
-				</div>							<!-- class col-3 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container-->		
-
-
-
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9">
-					<h3 style = "color: #c4790f">
-						Curly bracket 
-					</h3>
+	<body>
+		<div class="bg">
+			<div id="img"></div>
+			<div id="overlay"></div>
+		</div>
+		<header>
+			<div class="row">
+				<div class="col-md-6 col-xs-6 col-sm-6">
+					<div id="logo">
+						<img src="http://demo.bonefishcode.com/acrux/template/light/light-img-cloud-audio/assets/img/logo-dark.png">
+					</div>
 				</div>
+				<div class="col-md-6 col-xs-6 col-sm-6">
+					<div id="message">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<center>
+			<div class="row">
+				<div class="col-md-12">
+					<h2> Always Believe </h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h1> Math exam </h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+			<div class="row" id="countdown">
+				<div class="col-md-3 col-xs-6 col-countdown">
+					<p class="days"></p>
+					<div class="countdown-label">Days</div>
+				</div>
+				<div class="col-md-3 col-xs-6 col-countdown">
+					<p class="hours"></p>
+					<div class="countdown-label">Hours</div>
+				</div>
+				<div class="col-md-3 col-xs-6 col-countdown">
+					<p class="minutes"></p>
+					<div class="countdown-label">Minutes</div>
+				</div>
+				<div class="col-md-3 col-xs-6 col-countdown">
+					<p class="seconds"></p>
+					<div class="countdown-label">Seconds</div>
+				</div>
+			</div>
+			</center>
+		</div>
+		<footer>
+			<div class="row">
+				<div class="col-md-6 music">
 
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-6">
-					<p style = 'font-family:"Antic Didone";
-						    font-size: 17px;'>	
-					
-	Curly brackets <i>{}</i> should be placed on a seperate line. 
-	This means that after <b>ANY</b> statement (if, for, while etc) a newline should
-	be added containing the curly bracket. <br />
-	The reason for doing is, is that missing curly brackets could be more easily detected,
-	because they <b>ALWAYS</b> got the same amount of tabs before the curly bracket.
-	A programmer should look vertical to see if an opening curly bracket meets a vertical
-	curly bracket and vice versa.
-	<br /> <br /> <br />
-
-	Let me explain the missing curly bracket by looking vertical in the code. <br />
-	If we look at the correct way of writing the curly bracket on the next line
-	(see the code on the right), we can see that both curly brackets contains 1 tab space	
-	before the actual curly bracket is written. They are in line with each other. <br />
-	If we would write a bigger statement and write the curly bracket on the same line, the curly bracket
-	may not be even onto the screen. This causes that the programmer need to scroll to look at the last
-	character of the statement and verify if this is a curly bracket or not. 
-	<br /> <br />
-
-	Writing the curly bracket on a new line in line with the other (the same amount of tabs) it is way easier
-	to find out if there is a mission curly bracket or not.
-
-					</p>
-				</div>							<!-- class col-6 -->
-
-
-				<div class = "col-6">	
-					<pre>
-						<code class = "C">
-	int mem_copied = 1;	/* variables always in snake_case */
-	if(mem_copied) {	/* BAD! The curly bracket should be on next line */
-		mem_copied = 0;	
-	}
-
-						</code>
-					</pre>
-
-
-					<pre>
-						<code class = "C">
-	int i;				
-	for(i = 0; i < otherval; i++)	/* Curly bracket on a seperate line */
-	{				/* A missing curly bracket is easier to detect */
-		i += 5;
-	}
-						</code>
-					</pre>
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-	
-		<div class = "container">
-			<div class = "row">						
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9"> 
-					<h3 style = "color: #c4790f">
-						Structs and unions
-					</h3>							
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-1"> </div>				<!-- class col-1 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->	
-
-
-		<div class = "container">
-			<div class = "row">
+				</div>
+				<div class="col-md-6 icons">
+					<div class="row">
+						<div class="col-md-3">
+                            <a href="https://github.com/">
+    				            <i class="fa fa-github" aria-hidden="true" href="www.google.com">
+                                </i>
+                            </a>
+						</div>
 				
-
-
-				<div class = "col-6">
-					<pre>
-						<code class = "C">
-
-	typedef struct		/* Typedef not recommended, but allowed */ 
-	{
-		int an_int;	/* Struct members in snake_case */
-		char a_char;
-	} object_name_t;	/* Object name in snake_case */
-				/* Because typedef, add _t at the end */
-
-						</code>	
-					</pre>
-
-
-
-					<pre>
-						<code class = "C">
-	union union_t	/* Prefered method, no typedef */
-	{
-		int i;	/* Union member in snake_case */
-		char c;
-	}
-	
-
-						</code>
-					</pre>
-
-				</div>							<!-- class col-6 -->
-
-
-				<div class = "col-6"> 
-					<p style = 'font-family:"Antic Didone";
-						    font-size: 17px;'>	
-					
-	A struct and a union may be typedeffed, but this is not recommended.
-	If you typedef a struct or a union, you are actually hiding some important
-	information for other programmers. It is legal to use,
-	but do not typedef if you are wisely.<br />
-
-	Struct and union members should be written in snake_case, since they are not constants.
-	Writing them in another style, like CamelCase is strictly forbidden and is <b>not allowed</b>.
-	<br /> <br /> <br />					
-
-
-	As you can see in the code, the curly brackets are on new lines as discussed before.
-	Keep in mind that structs and unions should be declared as much as possible in an header
-	file (.h extension). More on this later. 
-					</p>
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-
-		<div class = "container">
-			<div class = "row">						
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9"> 
-					<h3 style = "color: #c4790f">
-						Enums
-					</h3>							
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-1"> </div>				<!-- class col-1 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->	
-
-
-		<div class = "container">
-			<div class = "row">	
-				<div class = "col-6">
-					<p style = 'font-family:"Antic Didone";
-						    font-size:17px;'>
-
-	Enums are a slightly bit different than structs and unions.
-	Since enums are integers that start from 0, they can be seen
-	as constants. Constants in this sentence means that enum elements
-	should be all capitaliezd. <br />
-
-	After each enum element there should be a comma next to the last character
-	of the enum element. <b>NO</b> spaces are allowed.
-	<br /> <br />
-
-	If needed, you may change the default value of an element by using the 
-	assign operator followed by a space and the value. The rule is the same,
-	the comma is placed after the last number and no spaces are between
-	the comma and the last digit.
-					</p>		
-				</div>							<!-- class col-6 -->
-
-				<div class = "col-6">
-					<pre>
-						<code class = "C">
-	enum 
-	{
-		FALSE ,		/* BAD. No space between last character and comma */
-		TRUE
-	}
-
-	enum
-	{
-		SUCCESS,	/* Every element contains a comma after the last character */
-		ERROR,
-		WARNING,
-		EXIT		/* The last element does NOT contain a comma */
-	}
-						</code>
-					</pre>
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-
-		<div class = "container">
-			<div class = "row">						
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9"> 
-					<h3 style = "color: #c4790f">
-						Conditions
-					</h3>							
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-1"> </div>				<!-- class col-1 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->	
-
-
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-6">
-					<pre>
-						<code class = "C">
-	if(value != 0)	/* BAD. This result in longer lines and is redundant */
-	if(value)	/* Check if the value is not equal to 0 */				
-						</code>
-					</pre>
-
-					<pre>
-						<code class = "C">
-	if(value == 0)	/* BAD. We want our code to be as small as possible */
-	if(!value)	/* Check if the value is equal to 0 */
-						</code>
-					</pre>
-
-					<pre>
-						<code class = "C">
-	if(value>=5)	/* BAD. This looks familiar to the arrow operator */
-	if(value >= 5)	/* The correct way to write a condition */
-						</code>
-					</pre>
-
-					<pre>
-						<code class = "C">
-	if((var1 + var2)!= 3)	/* BAD. There should be a space ) and ! */
-	if((var1 - var2) <= 5)	/* Optimal readability for a conditional statement */
-						</code>
-					</pre>
-					
-				</div>							<!-- class col-6 -->
-
-				<div class = "col-6">	
-					<p style = 'font-family:"Antic Didone";
-						    font-size:17px;'>
-	Conditions are used in an if-, while-, for-, and switch statement.
-	If a programmer want to compare a value that may not be equal to 0,
-	the programmer should not write != 0. Any statement is true if the value
-	is not equal to 0. The progammer should only write his value inside the statement.
-	<br /> <br /> <br /> <br />
-
-	If a programmer want to verify that a variable is equal to 0, he should not write
-	== 0. Instead we use the logic NOT operator. Statements are true if a variable is not
-	equal to zero. If we add the logic NOT operator (!) a statement would run true if
-	the value is equal to zero.
-	<br /> <br /> <br /> <br />
-
-	It is important to improve the readability of the source code for other
-	human programmers. To comply with this, the space bar is important in 
-	conditional statements. <br />
-	A space should be added between a variable and an operator (and vice versa).
-	<br /> <br /> <br /> <br />
-
-	This all applies on more complex conditional statements aswell. Parentheses 
-	require a space followed by an operator. This is just the same as a variable name.
-	Keep in mind that parantheses followed by a variable name do <b>NOT</b> need a space.
-	
-
-
-
-					</p>
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-		<div class = "container">
-			<div class = "row">						
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9"> 
-					<h3 style = "color: #c4790f">
-						Preprocessor defines
-					</h3>							
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-1"> </div>				<!-- class col-1 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->	
-
-
-
-		<div class = "container">
-			<div class = "row">	
-				<div class = "col-6">
-					<p style = 'font-family:"Antic Didone";
-						    font-size:17px;'>
-
-	It's standard to define preprocessor constant with all capital letters.
-	To seperate 2 words from eachother, use an underscore _. <br />
-	Macro names should be all capitalized, since they are made with the #define
-	keyword of the preprocessor. <br />
-	I have been thinking if the definition of the macro arguments should be
-	capatilized aswell, but could not give a valid reason why it may not. 
-	<br /> <br />
-
-	since <a href = "https://gcc.gnu.org/onlinedocs/cpp/Macro-Arguments.html"> GNU </a>
-	uses capitalized letters for macro names it is the best to follow this.
-	I know that GNU does define its macro's with small letters, and I do not agree with them
-	on this point. Please use capitalized letters on #defines all the time.
-	<br /> <br />
-	
-	Do not forget alignment. After the #define keyword should be a tab, which uses only 1 space
-	since a tab is 8 spaces and #define is 7 characters. Next, write your constant or macro name
-	followed by a tab or two so the definition is aligned with each other.  	
-
-
-					</p>		
-				</div>							<!-- class col-6 -->
-
-				<div class = "col-6">
-					<pre>
-						<code class = "C">
-	#define	PI	3.14159265359
-	#define	MULT(X)	X*X
-						</code>
-					</pre>
-
-
-
-					<pre>
-						<code class = "C">
-	#define	PI	3.14159265359		/* BAD. PI should have another tab */
-	#define	EULER_CONST	2.71828	
-
-	#define	PI		3.14159265359	/* Definition of PI and EULER are aligned */
-	#define	EULER_CONST	2.71828		
-
-						</code>
-					</pre>
-
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
-
-		<div class = "container">
-			<div class = "row">						
-				<div class = "col-2"> </div>				<!-- class col-2 -->
-
-				<div class = "col-9"> 
-					<h3 style = "color: #c4790f">
-						Pointer asterisk
-					</h3>							
-				</div>							<!-- class col-9 -->
-
-				<div class = "col-1"> </div>				<!-- class col-1 -->
-
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->	
-
-
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-6">
-					<pre>
-						<code class = "C">
-	int *i_ptr, *j_ptr, *k_ptr;	/* The only way to make multiple pointers on 1 line */
-	int* l_ptr;			/* BAD. The asterisk should be placed next to the var name */
-	int * m_ptr;			/* BAD. The asterisk should be placed next to the var name */
-	int *n_ptr;			/* A correct way to write down a pointer */
-						</code>
-					</pre>
-					
-				</div>							<!-- class col-6 -->
-
-				<div class = "col-6">	
-					<p style = 'font-family:"Antic Didone";
-						    font-size:17px;'>
-
-	There has a lot been discussed about the placement of the pointer asterisk.
-	My suggestion is that the asterisk should be placed next to the variabele.
-	The reason for this is that a pointer is a variable characteristic.
-	Also, declaring multiple pointer variables on 1 line can be done by placing
-	after every comma a new asterisk for the variable.
-
-					</p>
-				</div>							<!-- class col-6 -->
-			</div>								<!-- class row -->
-		</div>									<!-- class container -->
-
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
